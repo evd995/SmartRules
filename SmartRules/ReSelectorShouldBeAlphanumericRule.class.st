@@ -12,7 +12,7 @@ ReSelectorShouldBeAlphanumericRule class >> checksMethod [
 { #category : #accessing }
 ReSelectorShouldBeAlphanumericRule >> basicCheck: aMethod [ 
 
-	^ aMethod selector isAllAlphaNumerics not
+	^ (aMethod selector reject: [:each| each = $:]) isAllAlphaNumerics not
 ]
 
 { #category : #accessing }
